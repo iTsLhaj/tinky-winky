@@ -20,3 +20,9 @@ jobs:
       
       - name: Building
         run: (./scripts/buildprod.sh)
+
+      - name: Install gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Fake Deploy
+        run: gcloud builds submit || true
