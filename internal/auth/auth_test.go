@@ -23,11 +23,6 @@ func TestGetAPIKey(t *testing.T) {
 		assertError(t, e)
 	})
 	t.Run("Invalid Authorization Header #2", func(t *testing.T) {
-		// FIXME: i intentionally broke the test
-		// 		  so i can make sure that my CI fail
-		//		  when the test dont pass
-		t.Errorf("temporary failure")
-
 		r := httptest.NewRequest(http.MethodGet, "/", nil)
 		r.Header.Add("Authorization", "0xdeadbeef meow/invalid ApiKey O_O")
 
