@@ -24,5 +24,11 @@ jobs:
       - name: Install gcloud
         uses: google-github-actions/setup-gcloud@v2
 
+      - env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      
+      - name: Run Migrations
+        run: (./scripts/migrateup.sh)
+
       - name: Fake Deploy
         run: gcloud builds submit || true
