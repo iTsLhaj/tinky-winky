@@ -27,6 +27,9 @@ jobs:
       - name: Install gcloud
         uses: google-github-actions/setup-gcloud@v2
       
+      - name: Setup goose
+        uses: mscno/setup-goose@v1
+
       - name: Run Migrations
         run: (./scripts/migrateup.sh)
 
