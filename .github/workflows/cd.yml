@@ -25,7 +25,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v2
 
       - env:
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       
       - name: Run Migrations
         run: (./scripts/migrateup.sh)
